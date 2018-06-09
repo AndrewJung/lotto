@@ -20,14 +20,14 @@ function genNumbers(){
     }
     return lottoNumbers;
 }
-function checkLogic1(){
+function checkLogic1(numbers){
   for(var i=0; i<numbers.length; i++){
       var no = numbers[i];
       if( numbers.indexOf(no+1)>=0 && numbers.indexOf(no+2)>=0 ) return true;
   }
   return false;
 }
-function checkLogic2(){
+function checkLogic2(numbers){
     // TODO feature/checkLogic2
     var decArea = [0, 0, 0, 0, 0];
     for(var i=0; i<numbers.length; i++){
