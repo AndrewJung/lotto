@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>로또번호 추첨기</title>
+    <style>
+      #NUMBERS { margin-top: 40vh; font-size: 5em; color: #fff; text-align: center; }
+      b{ display: inline-block; width: 128px; height: 128px; line-height: 128px; border-radius: 64px; margin: 16px; background: #999; }
+    </style>
 </head>
 <style>
 #NUMBERS { margin-top: 5vh; font-size: 2em; color: #fff; text-align: center; }
@@ -18,7 +22,7 @@ b{ display: inline-block; width: 64px; height: 64px; line-height: 64px; border-r
 function genNumbers(){
     var lottoNumbers = [];
     while (lottoNumbers.length<6) {
-        var no = Math.round(Math.random()*45);
+        var no = Math.round(Math.random()*45)+1;
         if( lottoNumbers.indexOf(no) === -1 ) lottoNumbers.push(no);
     }
     return lottoNumbers;
@@ -56,6 +60,7 @@ window.onload = function(){
         html_lotto += '<br>'
     }
     document.getElementById("NUMBERS").innerHTML = html_lotto;
+   
 }
 </script>
 
