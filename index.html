@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>로또번호 추첨기</title>
+    <style>
+      #NUMBERS { margin-top: 40vh; font-size: 5em; color: #fff; text-align: center; }
+      b{ display: inline-block; width: 128px; height: 128px; line-height: 128px; border-radius: 64px; margin: 16px; background: #999; }
+    </style>
 </head>
 
 <body>
@@ -38,6 +42,7 @@ function checkLogic2(numbers){
 }
 
 window.onload = function(){
+    // todo 5번 추첨 번호 
     var lottoNumbers = genNumbers();
 
     // 23,24,25 과 간이 연속으로 3개의 숫자가 나오지 않게 하자!
@@ -47,6 +52,13 @@ window.onload = function(){
     while( checkLogic2(lottoNumbers) ) lottoNumbers=genNumbers();
 
     document.getElementById("NUMBERS").innerHTML = lottoNumbers.join(" ");
+
+    var html_lotto = "";
+    for(var i=0; i<lottoNumbers.length; i++){
+      html_lotto += '<b>'+ lottoNumbers[i] +'</b> ';
+    }
+    document.getElementById("NUMBERS").innerHTML = html_lotto;
+    
 }
 </script>
 </body>
